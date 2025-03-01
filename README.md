@@ -2,6 +2,10 @@
 
 Market Data Aggregator is a Python-based pipeline that consolidates stock market data from multiple sources, caches it in a PostgreSQL database, processes it by computing technical indicators (such as SMA, EMA, MACD, RSI, OBV, etc.), and displays an interactive dashboard using Streamlit.
 
+## Demo
+
+![Market Data Aggregator Demo](demo.gif)
+
 ## Features
 
 - **Multiple Data Sources:** Fetch raw market data from Alpha Vantage and Yahoo Finance.
