@@ -2,3 +2,4 @@ psycopg
 pandas
 requests
 python-dotenv
+yfinance

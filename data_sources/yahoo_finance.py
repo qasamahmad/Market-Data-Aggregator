@@ -1,16 +1,12 @@
-from .base_source import BaseDataSource
 import pandas as pd
+import yfinance as yf
+from .base_source import BaseDataSource
 
 class YahooFinanceDataSource(BaseDataSource):
-    """Stub for fetching market data from Yahoo Finance."""
+    """Yahoo Finance data source."""
 
-    def fetch_data(
-        self,
-        symbol: str,
-        start_date: str = None,
-        end_date: str = None,
-        **kwargs
-    ) -> pd.DataFrame:
+    def fetch_data(self, symbol: str, start_date: str = None, end_date: str = None, **kwargs) -> pd.DataFrame:
         """Fetch market data for a symbol and return a DataFrame."""
-        # TODO: Integrate with Yahoo Finance API.
-        return pd.DataFrame()
+        ticker = yf.Ticker(symbol)
+        df = ticker.history(start=start_date, end=end_date)
+        return df.sort_index()
